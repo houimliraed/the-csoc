@@ -15,8 +15,16 @@ variable "AWS_Region" {
 }
 
 variable "backend_s3" {
-
   description = "S3 backend resource name for the deployement user"
   default     = "the-csoc-tf-state"
+}
 
+output "infra_user_access_key_id" {
+  value     = aws_iam_access_key.infra_user_key.id
+  sensitive = true
+}
+
+output "infra_user_secret_access_key" {
+  value     = aws_iam_access_key.infra_user_key.secret
+  sensitive = true
 }

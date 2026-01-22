@@ -28,3 +28,8 @@ output "infra_user_secret_access_key" {
   value     = aws_iam_access_key.infra_user_key.secret
   sensitive = true
 }
+
+variable "prefix" {
+  description = "prefix for resouces in AWS"
+  default     = "the-csoc"
+}

@@ -7,11 +7,11 @@ terraform {
     }
   }
   backend "s3" {
-    bucket               = "the-csoc-tf-state"
-    key                  = "tf-state"
-    region               = var.AWS_Region
-    encrypt              = true
-    use_lockfile         = true
+    bucket       = "the-csoc-tf-state"
+    key          = "tf-state"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true
   }
 }
 

@@ -3,5 +3,10 @@ services:
     container_name: terraform
     image: hashicorp/terraform:latest
     volumes:
-      - ./infrastructure:/infrastructure
-    working_dir: /workspace
+      - ./:/infrastructure
+    working_dir: /infrastructure
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+      - AWS_REGION=${AWS_REGION}
